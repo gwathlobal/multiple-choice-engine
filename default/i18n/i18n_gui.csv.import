@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://by6u1tpy3m5hq"
+
+[deps]
+
+files=["res://default/i18n/i18n_gui.ru.translation", "res://default/i18n/i18n_gui.en.translation"]
+
+source_file="res://default/i18n/i18n_gui.csv"
+dest_files=["res://default/i18n/i18n_gui.ru.translation", "res://default/i18n/i18n_gui.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0
