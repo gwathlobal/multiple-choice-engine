@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6jtex5gqg0e"]
+
+[ext_resource type="Script" path="res://engine/gui/dialogs/main_menu/main_menu_dialog.gd" id="1_omjq2"]
+[ext_resource type="Texture2D" uid="uid://dfjer81c0iqpg" path="res://default/sprites/panel_Example2.png" id="2_7e0lo"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_7sryv"]
+
+[node name="MainMenuDialog" type="Panel" node_paths=PackedStringArray("close_btn", "settings_btn", "save_game_btn", "load_game_btn", "exit_to_menu_btn")]
+offset_right = 1153.0
+offset_bottom = 648.0
+script = ExtResource("1_omjq2")
+close_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CloseButton")
+settings_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/SettingsButton")
+save_game_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/SaveGameButton")
+load_game_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/LoadGameButton")
+exit_to_menu_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/ExitToMainMenuButton")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -125.5
+offset_right = 210.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_7e0lo")
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Filler" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("3_7sryv")
+text = "MAIN_MENU_SAVE_GAME_BTN"
+
+[node name="LoadGameButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("3_7sryv")
+text = "MAIN_MENU_LOAD_GAME_BTN"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("3_7sryv")
+text = "MAIN_MENU_SETTINGS_BTN"
+
+[node name="Filler2" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ExitToMainMenuButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_7sryv")
+text = "MAIN_MENU_EXIT_TO_MM_BTN"
+
+[node name="CloseButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_7sryv")
+text = "MAIN_MENU_CLOSE_BTN"

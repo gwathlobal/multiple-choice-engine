@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://biphpwbxnreq"]
+
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="1_ne8ko"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="1_qmpdd"]
+[ext_resource type="Script" path="res://engine/gui/elements/props_panel/quality_simple/gui_quality_simple.gd" id="2_6eqnd"]
+
+[node name="Gui_Qulity_Simple" type="HBoxContainer" node_paths=PackedStringArray("icon", "quality_label", "value_label", "progress_bar")]
+custom_minimum_size = Vector2(0, 30)
+offset_right = 215.0
+offset_bottom = 49.0
+theme = ExtResource("1_qmpdd")
+script = ExtResource("2_6eqnd")
+icon = NodePath("Icon")
+quality_label = NodePath("VBoxContainer/HBoxContainer/QualityLabel")
+value_label = NodePath("VBoxContainer/HBoxContainer/ValueLabel")
+progress_bar = NodePath("VBoxContainer/ProgressBar")
+label_txt = "[b]{qual_pl_nom}[/b]"
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ne8ko")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="QualityLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_qmpdd")
+bbcode_enabled = true
+text = "[b]{qual_pl_nom}[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ValueLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+show_percentage = false

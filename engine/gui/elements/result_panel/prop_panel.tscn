@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2n2ug07rn43e"]
+
+[ext_resource type="Script" path="res://engine/gui/elements/result_panel/prop_panel.gd" id="1_bjgsa"]
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_7g8l0"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_0fvqt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yra6"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udlht"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.0898756, 0.0898756, 0.0898756, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Prop_Panel" type="HBoxContainer" node_paths=PackedStringArray("icon", "text", "progress_container", "progress_bar", "cur_value_label", "next_value_label")]
+offset_right = 921.0
+offset_bottom = 216.0
+script = ExtResource("1_bjgsa")
+icon = NodePath("Icon")
+text = NodePath("VBoxContainer/Text")
+progress_container = NodePath("VBoxContainer/HBoxContainer")
+progress_bar = NodePath("VBoxContainer/HBoxContainer/ProgressBar")
+cur_value_label = NodePath("VBoxContainer/HBoxContainer/CenterContainer/Panel/CurValueLabel")
+next_value_label = NodePath("VBoxContainer/HBoxContainer/CenterContainer2/Panel/NextValueLabel")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_7g8l0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_0fvqt")
+bbcode_enabled = true
+text = "This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. This is a result text. "
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3yra6")
+
+[node name="CurValueLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer/Panel"]
+layout_mode = 2
+theme = ExtResource("3_0fvqt")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/HBoxContainer/CenterContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_udlht")
+
+[node name="NextValueLabel" type="Label" parent="VBoxContainer/HBoxContainer/CenterContainer2/Panel"]
+layout_mode = 2
+theme = ExtResource("3_0fvqt")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

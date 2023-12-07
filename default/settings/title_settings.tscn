@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2jry4dm4p5jt"]
+
+[ext_resource type="Script" path="res://default/settings/title.gd" id="1_ne214"]
+
+[node name="title_settings" type="Node"]
+script = ExtResource("1_ne214")
+show_title_text = false

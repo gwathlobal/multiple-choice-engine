@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmw2ue8nyyeby"]
+
+[ext_resource type="Script" path="res://engine/gui/dialogs/save_game/save_game_dialog.gd" id="1_xexo0"]
+[ext_resource type="Texture2D" uid="uid://dfjer81c0iqpg" path="res://default/sprites/panel_Example2.png" id="2_g2eri"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://gui/theme.theme" id="3_qbs58"]
+[ext_resource type="PackedScene" uid="uid://cryi6p3mqvxli" path="res://gui/saved_game_panel.tscn" id="4_hlk3j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr3eo"]
+content_margin_right = 2.0
+
+[node name="SaveGameDialog" type="Panel" node_paths=PackedStringArray("scroll_vbox_container", "save_game_name_input", "save_game_btn", "close_btn")]
+offset_right = 1153.0
+offset_bottom = 648.0
+script = ExtResource("1_xexo0")
+scroll_vbox_container = NodePath("MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer")
+save_game_name_input = NodePath("MarginContainer2/MarginContainer/VBoxContainer/SaveGameNameEdit")
+save_game_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/SaveGameButton")
+close_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/CloseButton")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -125.5
+offset_right = 210.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_g2eri")
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_qbs58")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SAVE_GAME_WIN_TITLE"
+horizontal_alignment = 1
+
+[node name="Filler" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rr3eo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SavedGamePanel" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="SavedGamePanel2" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="SavedGamePanel3" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="SavedGamePanel4" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="SavedGamePanel5" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="SavedGamePanel6" parent="MarginContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_hlk3j")]
+layout_mode = 2
+
+[node name="Filler3" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SaveGameNameEdit" type="LineEdit" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_length = 255
+clear_button_enabled = true
+
+[node name="Filler2" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_qbs58")
+text = "SAVE_GAME_WIN_SAVE_BTN"
+
+[node name="CloseButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_qbs58")
+text = "SAVE_GAME_WIN_CLOSE_BTN"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="text_changed" from="MarginContainer2/MarginContainer/VBoxContainer/SaveGameNameEdit" to="." method="_on_save_game_name_edit_text_changed"]

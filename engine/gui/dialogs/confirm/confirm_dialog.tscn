@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://b01sbauwxonq3"]
+
+[ext_resource type="Script" path="res://engine/gui/dialogs/confirm/confirm_dialog.gd" id="1_1yf0l"]
+[ext_resource type="Texture2D" uid="uid://dfjer81c0iqpg" path="res://default/sprites/panel_Example2.png" id="2_s5pj8"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_jmns1"]
+
+[node name="ConfirmDialog" type="Panel" node_paths=PackedStringArray("confirm_label", "ok_btn", "cancel_btn")]
+offset_right = 1153.0
+offset_bottom = 648.0
+script = ExtResource("1_1yf0l")
+confirm_label = NodePath("MarginContainer2/MarginContainer/VBoxContainer/ConfirmLabel")
+ok_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/OkButton")
+cancel_btn = NodePath("MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/CancelButton")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.5
+offset_top = -125.0
+offset_right = 267.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_s5pj8")
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ConfirmLabel" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jmns1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Are you sure you want to permanently remove the file 'savegame.save'? 
+All saved data will be lost."
+horizontal_alignment = 1
+
+[node name="Filler" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Filler" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OkButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme = ExtResource("3_jmns1")
+text = "CONFIRM_DIALOG_OK_BTN"
+
+[node name="Filler3" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="CancelButton" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme = ExtResource("3_jmns1")
+text = "CONFIRM_DIALOG_CANCEL_BTN"
+
+[node name="Filler2" type="Control" parent="MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

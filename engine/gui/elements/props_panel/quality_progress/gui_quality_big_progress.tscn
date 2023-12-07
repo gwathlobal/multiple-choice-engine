@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwymep52avm10"]
+
+[ext_resource type="Script" path="res://engine/gui/elements/props_panel/quality_progress/gui_quality_big_progress.gd" id="1_83idw"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="1_c336b"]
+
+[node name="GUI_Quality_Big_Progress" type="VBoxContainer" node_paths=PackedStringArray("quality_label", "progress_bar", "progress_label")]
+theme = ExtResource("1_c336b")
+theme_override_constants/separation = 0
+script = ExtResource("1_83idw")
+quality_label = NodePath("QualityLabel")
+progress_bar = NodePath("ProgressLabel/ProgressBar")
+progress_label = NodePath("ProgressLabel")
+
+[node name="QualityLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Action Points[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 2
+text = "8/8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="ProgressLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 8.0
+value = 8.0
+show_percentage = false

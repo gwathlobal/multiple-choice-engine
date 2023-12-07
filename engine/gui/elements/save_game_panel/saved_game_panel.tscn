@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cryi6p3mqvxli"]
+
+[ext_resource type="Script" path="res://engine/gui/elements/save_game_panel/saved_game_panel.gd" id="1_0fhor"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="2_ystkn"]
+[ext_resource type="Texture2D" uid="uid://gmsgnk75ceyy" path="res://default/sprites/Trashbin.png" id="3_fcefa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01dsa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.431357, 0.407904, 0.388373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dng6h"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.431357, 0.403998, 0.384451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5y28"]
+bg_color = Color(0.431357, 0.407904, 0.388373, 1)
+
+[node name="SavedGamePanel" type="PanelContainer" node_paths=PackedStringArray("saved_game", "delete_btn")]
+script = ExtResource("1_0fhor")
+saved_game = NodePath("HBoxContainer/Button")
+delete_btn = NodePath("HBoxContainer/DeleteButton")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ystkn")
+theme_override_colors/font_color = Color(0.745098, 0.745098, 0.745098, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_01dsa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dng6h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x5y28")
+toggle_mode = true
+text = "savegame.save"
+alignment = 0
+text_overrun_behavior = 3
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeleteButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_fcefa")
+stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

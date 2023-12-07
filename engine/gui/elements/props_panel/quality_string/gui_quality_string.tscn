@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://jb7uaaoye5ed"]
+
+[ext_resource type="Script" path="res://engine/gui/elements/props_panel/quality_string/gui_quality_string.gd" id="1_on6ys"]
+
+[node name="Label" type="Label" node_paths=PackedStringArray("quality_label")]
+text = "Player Name"
+horizontal_alignment = 1
+script = ExtResource("1_on6ys")
+quality_label = NodePath(".")

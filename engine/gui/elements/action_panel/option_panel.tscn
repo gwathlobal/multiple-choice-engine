@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://plbtw6fefn7e"]
+
+[ext_resource type="Script" path="res://engine/gui/elements/action_panel/option_panel.gd" id="1_i6o8f"]
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_djm4u"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_6c4se"]
+[ext_resource type="PackedScene" uid="uid://dh6enfsfb251h" path="res://engine/gui/elements/action_panel/challenge_panel.tscn" id="4_kress"]
+[ext_resource type="PackedScene" uid="uid://bww2uheyiiwcn" path="res://engine/gui/elements/action_panel/cond_icon.tscn" id="5_cnnvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc4ks"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w3pt7"]
+color = Color(0.3019, 0.3019, 0.3019, 1)
+thickness = 2
+
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("challenge_container", "challenge_container_proper")]
+offset_right = 790.0
+offset_bottom = 301.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hc4ks")
+script = ExtResource("1_i6o8f")
+challenge_container = NodePath("HBoxContainer/VBoxContainer/ChallengeContainer")
+challenge_container_proper = NodePath("HBoxContainer/VBoxContainer/ChallengeContainer/ChallengeContainerProper")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_djm4u")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6c4se")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+bbcode_enabled = true
+text = "[b]Title[/b]"
+fit_content = true
+
+[node name="Text" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6c4se")
+text = "This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text.This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. This is a very long option text. "
+fit_content = true
+
+[node name="ChallengeContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/ChallengeContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_w3pt7")
+
+[node name="ChallengeContainerProper" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ChallengeContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Challenge_Panel" parent="HBoxContainer/VBoxContainer/ChallengeContainer/ChallengeContainerProper" instance=ExtResource("4_kress")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SmallIcon" parent="HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer" instance=ExtResource("5_cnnvf")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_6c4se")
+text = "OPTION_BTN_GO"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctjhb5k4jxq4e"]
+
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="1_ep14n"]
+[ext_resource type="Script" path="res://engine/gui/elements/result_panel/result_panel.gd" id="1_o0vqm"]
+[ext_resource type="PackedScene" uid="uid://d2n2ug07rn43e" path="res://engine/gui/elements/result_panel/prop_panel.tscn" id="2_72pg4"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_mvnwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjv1k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Result_Panel" type="VBoxContainer" node_paths=PackedStringArray("button_onwards", "button_gameover")]
+offset_right = 1149.0
+offset_bottom = 648.0
+script = ExtResource("1_o0vqm")
+button_onwards = NodePath("HBoxContainer2/ButtonOnwards")
+button_gameover = NodePath("HBoxContainer2/ButtonGameover")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_ep14n")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_mvnwm")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+bbcode_enabled = true
+text = "[b]Title[b]"
+fit_content = true
+
+[node name="Text" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mvnwm")
+text = "This is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long textThis is a very long text"
+fit_content = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjv1k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Prop_Panel" parent="ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_72pg4")]
+layout_mode = 2
+
+[node name="Prop_Panel2" parent="ScrollContainer/PanelContainer/VBoxContainer" instance=ExtResource("2_72pg4")]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonOnwards" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_mvnwm")
+text = "RESULT_BTN_ONWARDS"
+
+[node name="ButtonGameover" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_mvnwm")
+text = "RESULT_BTN_GAMEOVER"
+
+[connection signal="pressed" from="HBoxContainer2/ButtonOnwards" to="." method="_on_button_onwards_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ButtonGameover" to="." method="_on_button_gameover_pressed"]

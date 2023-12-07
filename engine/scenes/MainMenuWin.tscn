@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp7kwvi1rklj7"]
+
+[ext_resource type="Script" path="res://engine/scenes/MainMenuWin.gd" id="1_lwr6t"]
+[ext_resource type="Texture2D" path="res://game/backgrounds/title.png" id="2_4ni22"]
+[ext_resource type="Texture2D" uid="uid://dfjer81c0iqpg" path="res://default/sprites/panel_Example2.png" id="3_ym26t"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="4_he2yo"]
+[ext_resource type="PackedScene" uid="uid://coxd4hyqjru32" path="res://engine/gui/dialogs/load_game/load_game_dialog.tscn" id="5_qq8m0"]
+[ext_resource type="PackedScene" uid="uid://rk1l11sef8ky" path="res://engine/gui/dialogs/options/options_dialog.tscn" id="6_t8l3s"]
+[ext_resource type="PackedScene" uid="uid://b01sbauwxonq3" path="res://engine/gui/dialogs/confirm/confirm_dialog.tscn" id="7_vxjqy"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="GUI" type="Control" parent="." node_paths=PackedStringArray("backround_panel", "max_vbox", "game_title_box", "game_title_label", "new_game_btn", "load_game_btn", "options_btn", "exit_game_btn", "options_dialog", "load_game_dialog")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lwr6t")
+backround_panel = NodePath("PanelContainer")
+max_vbox = NodePath("VBoxContainer")
+game_title_box = NodePath("VBoxContainer/HBoxContainer2/MarginContainer")
+game_title_label = NodePath("VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer/MainGameTitleLabel")
+new_game_btn = NodePath("VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/NewGameButton")
+load_game_btn = NodePath("VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/LoadGameButton")
+options_btn = NodePath("VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/SettingsButton")
+exit_game_btn = NodePath("VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/CloseButton")
+options_dialog = NodePath("OptionsDialog")
+load_game_dialog = NodePath("LoadGameDialog")
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="BackgroundTexture" type="TextureRect" parent="GUI/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_4ni22")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 655.0
+
+[node name="Filler" type="Control" parent="GUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 135)
+layout_mode = 2
+
+[node name="Filler" type="Control" parent="GUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_ym26t")
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="MainGameTitleLabel" type="RichTextLabel" parent="GUI/VBoxContainer/HBoxContainer2/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_he2yo")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]MAIN_GAME_TITLE[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Filler2" type="Control" parent="GUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Filler2" type="Control" parent="GUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Filler" type="Control" parent="GUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_ym26t")
+patch_margin_left = 16
+patch_margin_top = 14
+patch_margin_right = 16
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Filler" type="Control" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_he2yo")
+text = "MAIN_MENU_NEW_GAME_BTN"
+
+[node name="LoadGameButton" type="Button" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_he2yo")
+text = "MAIN_MENU_LOAD_GAME_BTN"
+
+[node name="SettingsButton" type="Button" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_he2yo")
+text = "MAIN_MENU_SETTINGS_BTN"
+
+[node name="Filler2" type="Control" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CloseButton" type="Button" parent="GUI/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_he2yo")
+text = "MAIN_MENU_EXIT_GAME_BTN"
+
+[node name="Filler2" type="Control" parent="GUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Filler3" type="Control" parent="GUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadGameDialog" parent="GUI" node_paths=PackedStringArray("confirm_dialog") instance=ExtResource("5_qq8m0")]
+visible = false
+layout_mode = 0
+confirm_dialog = NodePath("../ConfirmDialog")
+
+[node name="OptionsDialog" parent="GUI" instance=ExtResource("6_t8l3s")]
+visible = false
+layout_mode = 0
+
+[node name="ConfirmDialog" parent="GUI" instance=ExtResource("7_vxjqy")]
+visible = false
+layout_mode = 0

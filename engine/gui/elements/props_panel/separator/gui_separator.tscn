@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyd81g6py3rxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flemt"]
+bg_color = Color(0.545174, 0.545174, 0.545174, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 2.0
+expand_margin_bottom = 3.0
+
+[node name="GUI_Separator" type="MarginContainer"]
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HSeparator" type="HSeparator" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxFlat_flemt")

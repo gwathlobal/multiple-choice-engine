@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ly5kdv20f36"]
+
+[ext_resource type="Texture2D" uid="uid://dfjer81c0iqpg" path="res://default/sprites/panel_Example2.png" id="1_1smqb"]
+[ext_resource type="Script" path="res://engine/gui/dialogs/journal/journal_dialog.gd" id="1_4fo1d"]
+[ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://gui/theme.theme" id="2_xew7c"]
+[ext_resource type="PackedScene" uid="uid://c83s82aifd0df" path="res://gui/gui_journal_entry.tscn" id="4_l43lo"]
+
+[node name="JournalDialog" type="Panel" node_paths=PackedStringArray("close_btn", "journal_container")]
+offset_right = 1150.0
+offset_bottom = 646.0
+script = ExtResource("1_4fo1d")
+close_btn = NodePath("MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/CloseButton")
+journal_container = NodePath("MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_right = 42
+theme_override_constants/margin_bottom = 42
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_1smqb")
+patch_margin_left = 14
+patch_margin_top = 13
+patch_margin_right = 15
+patch_margin_bottom = 13
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="WindowTitle" type="Label" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_xew7c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "JOURNAL_WIN_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GUI_Journal_Entry" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_l43lo")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Fill" type="Control" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "JOURNAL_CLOSE_BTN"

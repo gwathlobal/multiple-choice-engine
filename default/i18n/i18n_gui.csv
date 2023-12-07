@@ -1,0 +1,37 @@
+keys,ru,en
+MAIN_GAME_TITLE,Колобок,Kolobok
+OPTION_BTN_GO,ВЫБРАТЬ,GO
+ACTION_BTN_BACK,НАЗАД,BACK
+RESULT_BTN_ONWARDS,ВПЕРЕД,ONWARDS
+RESULT_BTN_GAMEOVER,ИГРА ОКОНЧЕНА,GAME OVER
+BTN_OPTIONS_TOOLTIP,Настройки,Options
+OPTIONS_WIN_TITLE,Настройки,Options
+OPTIONS_LANG_LABEL,Язык,Language
+OPTIONS_BTN_CLOSE,Закрыть,Close
+INVENTORY_WIN_TITLE,Инвентарь,Inventory
+INV_EQUIPMENT_LABEL,Снаряжение,Equipment
+INV_INVENTORY_LABEL,Предметы,Inventory
+INV_CLOSE_BTN,Закрыть,Close
+JOURNAL_WIN_TITLE,Журнал,Journal
+JOURNAL_CLOSE_BTN,Закрыть,Close
+MAIN_MENU_NEW_GAME_BTN,Новая игра,New Game
+MAIN_MENU_SAVE_GAME_BTN,Сохранить игру,Save Game
+MAIN_MENU_LOAD_GAME_BTN,Загрузить игру,Load Game
+MAIN_MENU_SETTINGS_BTN,Настройки,Settings
+MAIN_MENU_EXIT_TO_MM_BTN,Выйти в главное меню,Exit to Main Menu
+MAIN_MENU_CLOSE_BTN,Закрыть,Close
+MAIN_MENU_EXIT_GAME_BTN,Выйти из игры,Exit Game
+LOAD_GAME_WIN_TITLE,Загрузить игру,Load Game
+LOAD_GAME_WIN_LOAD_BTN,Загрузить игру,Load Game
+LOAD_GAME_WIN_CLOSE_BTN,Закрыть,Close
+SAVE_GAME_WIN_TITLE,Сохранить игру,Save Game
+SAVE_GAME_WIN_SAVE_BTN,Сохранить игру,Save Game
+SAVE_GAME_WIN_CLOSE_BTN,Закрыть,Close
+CONFIRM_DIALOG_OK_BTN,Oк,Ok
+CONFIRM_DIALOG_CANCEL_BTN,Отмена,Cancel
+LOAD_GAME_CONFIRM_TEXT,"Вы уверены, что хотите загрузить выбранную сохраненную игру ‘{filename}’?
+Все несохраненные данные будут потеряны.","Are you sure you want to load the selected saved game '{filename}'?
+All unsaved data will be lost."
+DELETE_GAME_CONFIRM_TEXT,"Вы уверены, что хотите удалить сохраненную игру ‘{filename}’?",Are you sure you want to delete the saved game '{filename}'?
+SAVE_GAME_OVERWRITE_CONFIRM_TEXT,"Сохраненная игра с таким именем уже существует. Вы уверены, что хотите перезаписать ее?",A saved game with the selected name already exists. Are you sure you want to overwrite it?
+EXIT_TO_MAIN_MENU_CONFIRM_TEXT,"Все несохраненные данные будут потеряны. Вы уверены, что хотите продолжить?",All unsaved data will be lost.. Are you sure you want to continue?
