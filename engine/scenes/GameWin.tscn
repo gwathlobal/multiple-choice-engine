@@ -1,11 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3fe5wqfgirwo"]
+[gd_scene load_steps=15 format=3 uid="uid://d3fe5wqfgirwo"]
 
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="1_86pvp"]
 [ext_resource type="Script" path="res://engine/scenes/GameWin.gd" id="2_c3tyy"]
-[ext_resource type="PackedScene" uid="uid://jb7uaaoye5ed" path="res://engine/gui/elements/props_panel/quality_string/gui_quality_string.tscn" id="4_ftp5l"]
-[ext_resource type="PackedScene" uid="uid://cwymep52avm10" path="res://engine/gui/elements/props_panel/quality_progress/gui_quality_big_progress.tscn" id="5_vqign"]
-[ext_resource type="PackedScene" uid="uid://dyd81g6py3rxk" path="res://engine/gui/elements/props_panel/separator/gui_separator.tscn" id="6_mtv15"]
-[ext_resource type="PackedScene" uid="uid://biphpwbxnreq" path="res://engine/gui/elements/props_panel/quality_simple/gui_quality_simple.tscn" id="7_p244c"]
 [ext_resource type="PackedScene" uid="uid://sy1knjem6e8n" path="res://engine/gui/elements/action_panel/action_panel.tscn" id="8_i7ska"]
 [ext_resource type="PackedScene" uid="uid://ctjhb5k4jxq4e" path="res://engine/gui/elements/result_panel/result_panel.tscn" id="9_dlnrf"]
 [ext_resource type="PackedScene" uid="uid://c5sn8mfiou534" path="res://engine/gui/elements/menu_bar/menu_bar.tscn" id="10_bdobu"]
@@ -78,36 +74,10 @@ layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel"]
+[node name="LeftPropsElementContainer" type="VBoxContainer" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_constants/separation = 4
-
-[node name="PlayerName" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("4_ftp5l")]
-layout_mode = 2
-obj = 1
-quality = 5
-
-[node name="ActionPoints" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("5_vqign")]
-layout_mode = 2
-obj = 1
-
-[node name="GUI_Separator" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("6_mtv15")]
-layout_mode = 2
-
-[node name="Wounds" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("7_p244c")]
-layout_mode = 2
-obj = 1
-quality = 3
-
-[node name="GUI_Separator2" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("6_mtv15")]
-layout_mode = 2
-
-[node name="Skill" parent="GUI/VBoxContainer2/HBoxContainer/LeftPropsPanel/VBoxContainer2" instance=ExtResource("7_p244c")]
-layout_mode = 2
-obj = 1
-quality = 6
-label_txt = "[b]{qual_sg_nom}[/b]"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
