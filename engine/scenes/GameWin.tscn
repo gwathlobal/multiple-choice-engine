@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3fe5wqfgirwo"]
+[gd_scene load_steps=19 format=3 uid="uid://d3fe5wqfgirwo"]
 
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="1_86pvp"]
 [ext_resource type="Script" path="res://engine/scenes/GameWin.gd" id="2_c3tyy"]
-[ext_resource type="Texture2D" uid="uid://ejw8jvledmci" path="res://game/backgrounds/Tower 4.png" id="3_t013b"]
 [ext_resource type="PackedScene" uid="uid://jb7uaaoye5ed" path="res://engine/gui/elements/props_panel/quality_string/gui_quality_string.tscn" id="4_ftp5l"]
 [ext_resource type="PackedScene" uid="uid://cwymep52avm10" path="res://engine/gui/elements/props_panel/quality_progress/gui_quality_big_progress.tscn" id="5_vqign"]
 [ext_resource type="PackedScene" uid="uid://dyd81g6py3rxk" path="res://engine/gui/elements/props_panel/separator/gui_separator.tscn" id="6_mtv15"]
@@ -62,7 +61,6 @@ size_flags_stretch_ratio = 0.3
 
 [node name="BackgroundTexture" type="TextureRect" parent="GUI/VBoxContainer2/PanelContainer"]
 layout_mode = 2
-texture = ExtResource("3_t013b")
 expand_mode = 2
 
 [node name="FadeTexture" type="TextureRect" parent="GUI/VBoxContainer2/PanelContainer"]

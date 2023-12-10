@@ -11,7 +11,7 @@ extends Control
 @export var background_texture:TextureRect
 @export var left_props_panel:MarginContainer
 
-var main_settings:Main_Settings = preload("res://default/settings/main_settings.tscn").instantiate() as Main_Settings
+const main_settings:Main_Settings = preload("res://game/settings/main_settings.tres") as Main_Settings
 
 func _ready():
 	print("Start GUI")

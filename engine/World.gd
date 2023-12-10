@@ -153,6 +153,9 @@ func get_prop(obj:Game_Command.Obj_Enum, prop_name:GQ.Nms):
 	
 	return _obj.get(prop_name, "0") 
 
+func get_quality_by_id(id:GQ.Nms) -> Game_Quality:
+	return quals.get(id)
+
 func _determine_object(obj:Game_Command.Obj_Enum):
 	var result = null
 	if obj == Game_Command.Obj_Enum.PLAYER:

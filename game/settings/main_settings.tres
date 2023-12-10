@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Main_Settings" load_steps=2 format=3 uid="uid://c1rnhmxolx0f0"]
+
+[ext_resource type="Script" path="res://game/settings/main_settings.gd" id="1_satns"]
+
+[resource]
+script = ExtResource("1_satns")
+show_left_panel = true
+show_stats = 0
+show_inv = 0
+show_journal = 0
+initial_action = ""
+initial_action_values = Array[Resource("res://game/settings/initial_action_value.gd")]([])

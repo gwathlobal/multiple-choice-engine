@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Title_Settings" load_steps=2 format=3 uid="uid://icxi8dqprujt"]
+
+[ext_resource type="Script" path="res://game/settings/title_settings.gd" id="1_aglt4"]
+
+[resource]
+script = ExtResource("1_aglt4")
+show_title_text = true

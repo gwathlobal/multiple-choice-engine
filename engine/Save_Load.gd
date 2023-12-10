@@ -4,26 +4,25 @@ class_name Save_Load
 
 const SAVE_GAME_PATH:String = "user://saves/"
 
+const main_settings:Main_Settings = preload("res://game/settings/main_settings.tres") as Main_Settings
+
 static func get_files_at_save_dir() -> PackedStringArray:
 	if not DirAccess.dir_exists_absolute(SAVE_GAME_PATH):
 		DirAccess.make_dir_absolute(SAVE_GAME_PATH)
 	return DirAccess.get_files_at(SAVE_GAME_PATH)
 
 static func new_game(world:World) -> void:
-	# set up req fields
-	world.system.clear()
-	
-	world.set_prop(world.system, GQ.Nms.SYS_BACKGROUND_IMG, "")
-	
-	world.player.clear()
-	
-	world.set_prop(world.player, GQ.Nms.PLAYER_ACTION_POINTS, "1")
-	world.set_prop(world.player, GQ.Nms.PLAYER_NAME, "Player Name")
-	world.set_prop(world.player, GQ.Nms.PLAYER_SKILL, "6")
-	
 	world.rng.randomize()
 	
-	world.initial_action = "welcome_screen"
+	# set up req fields
+	world.system.clear()
+	world.player.clear()
+	
+	for init_value in main_settings.initial_action_values:
+		var obj = World._determine_object(init_value.obj)
+		world.set_prop(obj, init_value.quality, init_value.value)
+	
+	world.initial_action = main_settings.initial_action
 
 static func save_game(filename:String, world:World) -> void:
 	var save:Dictionary = {}

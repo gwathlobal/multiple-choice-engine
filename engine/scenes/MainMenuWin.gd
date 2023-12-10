@@ -11,7 +11,7 @@ extends Control
 @export var options_dialog:Options_Dialog
 @export var load_game_dialog:Load_Game_Dialog
 
-var title_settings:Title_Settings = preload("res://default/settings/title_settings.tscn").instantiate() as Title_Settings
+const title_settings:Title_Settings = preload("res://game/settings/title_settings.tres") as Title_Settings
 
 const MAIN_GAME_TITLE = "MAIN_GAME_TITLE"
 

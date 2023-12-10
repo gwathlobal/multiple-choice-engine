@@ -7,7 +7,7 @@ class_name GameMenuBar
 @onready var journal_btn:TextureButton = $JournalButton
 @onready var options_btn:TextureButton = $OptionsButton
 
-var main_settings:Main_Settings = preload("res://default/settings/main_settings.tscn").instantiate() as Main_Settings
+const main_settings:Main_Settings = preload("res://game/settings/main_settings.tres") as Main_Settings
 
 func show_stats():
 	match main_settings.show_stats:

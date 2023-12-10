@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 
 class_name Main_Settings
 
@@ -12,3 +12,5 @@ enum Low_Panel_Button_State {
 @export var show_stats:Low_Panel_Button_State
 @export var show_inv:Low_Panel_Button_State
 @export var show_journal:Low_Panel_Button_State
+@export var initial_action:String
+@export var initial_action_values:Array[Initial_Action_Value]
