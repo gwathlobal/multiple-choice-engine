@@ -10,3 +10,4 @@ show_inv = 0
 show_journal = 0
 initial_action = ""
 initial_action_values = Array[Resource("res://game/settings/initial_action_value.gd")]([])
+default_locale = 0

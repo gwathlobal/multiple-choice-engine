@@ -12,12 +12,14 @@ extends Control
 @export var load_game_dialog:Load_Game_Dialog
 
 const title_settings:Title_Settings = preload("res://game/settings/title_settings.tres") as Title_Settings
-
+const main_settings:Main_Settings = preload("res://game/settings/main_settings.tres") as Main_Settings
 const MAIN_GAME_TITLE = "MAIN_GAME_TITLE"
 
 func _ready():
-	TranslationServer.set_locale('ru')
-	
+	var locale = Main_Settings.get_locale_name(main_settings.default_locale)
+	TranslationServer.set_locale(locale)
+	DisplayServer.window_set_title(tr(MAIN_GAME_TITLE))
+		
 	get_tree().get_root().connect("size_changed", on_resize)
 	
 	new_game_btn.connect("pressed", new_game)
