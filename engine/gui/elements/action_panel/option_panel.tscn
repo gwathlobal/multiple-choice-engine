@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://plbtw6fefn7e"]
+[gd_scene load_steps=7 format=3 uid="uid://plbtw6fefn7e"]
 
 [ext_resource type="Script" path="res://engine/gui/elements/action_panel/option_panel.gd" id="1_i6o8f"]
-[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_djm4u"]
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_6c4se"]
 [ext_resource type="PackedScene" uid="uid://dh6enfsfb251h" path="res://engine/gui/elements/action_panel/challenge_panel.tscn" id="4_kress"]
 [ext_resource type="PackedScene" uid="uid://bww2uheyiiwcn" path="res://engine/gui/elements/action_panel/cond_icon.tscn" id="5_cnnvf"]
@@ -37,7 +36,6 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("2_djm4u")
 expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]

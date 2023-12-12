@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c83s82aifd0df"]
 
 [ext_resource type="Script" path="res://engine/gui/elements/journal_entry/gui_journal_entry.gd" id="1_vehqh"]
-[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_se23s"]
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://game/icons/icon_std.svg" id="2_se23s"]
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_er0hv"]
 
 [node name="GUI_Journal_Entry" type="HBoxContainer" node_paths=PackedStringArray("icon", "entry_label")]

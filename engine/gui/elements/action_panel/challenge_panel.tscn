@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh6enfsfb251h"]
 
 [ext_resource type="Script" path="res://engine/gui/elements/action_panel/challenge_panel.gd" id="1_5h512"]
-[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_1ehjf"]
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://game/icons/icon_std.svg" id="2_1ehjf"]
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="3_ia3gg"]
 
 [node name="Challenge_Panel" type="HBoxContainer" node_paths=PackedStringArray("icon", "label")]

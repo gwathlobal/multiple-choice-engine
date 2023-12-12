@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckvut1yp0csgq"]
 
 [ext_resource type="Theme" uid="uid://m127qw5dkbol" path="res://default/theme.theme" id="1_tci6c"]
-[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://default/icons/icon.svg" id="2_qo3w5"]
+[ext_resource type="Texture2D" uid="uid://rc87a7j2b0ch" path="res://game/icons/icon_std.svg" id="2_qo3w5"]
 [ext_resource type="Script" path="res://engine/gui/elements/item/gui_item.gd" id="3_u1d11"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5n6c"]

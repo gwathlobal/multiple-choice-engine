@@ -13,7 +13,7 @@ config_version=5
 config/name="Multiple Choice Game Engine"
 run/main_scene="res://engine/scenes/MainMenuWin.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://default/icons/icon.svg"
+config/icon="res://game/icons/icon_std.svg"
 
 [autoload]
 
