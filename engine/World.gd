@@ -88,6 +88,10 @@ func _init_game():
 		return
 	
 	var game_file_str = "res://"+game_file
+	if !FileAccess.file_exists(game_file_str):
+		push_warning(game_file + " does not exist! Skipping...")
+		return
+	
 	# load the game archive
 	var success = ProjectSettings.load_resource_pack(game_file_str, true)
 	if not success:
