@@ -23,7 +23,7 @@ func show_journal():
 		child.queue_free()
 	var entries:Array = World.get_all_qualities_by_category(Game_Command.Obj_Enum.PLAYER, Game_Quality.Category_Enum.JOURNAL)
 	for entry in entries:
-		var strng:String = entry.get_journal_entry_value(World.get_prop(Game_Command.Obj_Enum.PLAYER, entry.id), Game_Quality.Journal_Entry_Enum.LONG)
+		var strng:String = entry.get_enum_value(World.get_prop(Game_Command.Obj_Enum.PLAYER, entry.id), Game_Quality.Entry_Type_Enum.LONG)
 		if strng == null:
 			continue
 		var gui_journal:GUI_Journal_Entry = journal_prefab.instantiate()

@@ -25,12 +25,8 @@ func get_hint(success:bool) -> String:
 		var val = value
 		var cur_val = World.get_prop(obj, prop)
 		if quality.type == Game_Quality.Type_Enum.ENUM:
-			if quality.category == Game_Quality.Category_Enum.JOURNAL:
-				val = tr(quality.get_journal_entry_value(value, Game_Quality.Journal_Entry_Enum.SHORT))
-				cur_val = tr(quality.get_journal_entry_value(cur_val, Game_Quality.Journal_Entry_Enum.SHORT))
-			else:
-				val = tr(quality.get_enum_value(value))
-				cur_val = tr(quality.get_enum_value(cur_val))
+			val = tr(quality.get_enum_value(value, Game_Quality.Entry_Type_Enum.SHORT))
+			cur_val = tr(quality.get_enum_value(cur_val, Game_Quality.Entry_Type_Enum.SHORT))
 			if val == null:
 				push_error([Game_Command.Obj_Enum.keys()[obj], 
 							Game_Command.Cmd_Enum.keys()[cmd], 
@@ -62,14 +58,9 @@ func get_hint(success:bool) -> String:
 		var val_max = r_str[1]
 		var cur_val = World.get_prop(obj, prop)
 		if quality.type == Game_Quality.Type_Enum.ENUM:
-			if quality.category == Game_Quality.Category_Enum.JOURNAL:
-				val_min = tr(quality.get_journal_entry_value(val_min, Game_Quality.Journal_Entry_Enum.SHORT))
-				val_max = tr(quality.get_journal_entry_value(val_max, Game_Quality.Journal_Entry_Enum.SHORT))
-				cur_val = tr(quality.get_journal_entry_value(cur_val, Game_Quality.Journal_Entry_Enum.SHORT))
-			else:
-				val_min = tr(quality.get_enum_value(val_min))
-				val_max = tr(quality.get_enum_value(val_max))
-				cur_val = tr(quality.get_enum_value(cur_val))
+			val_min = tr(quality.get_enum_value(val_min, Game_Quality.Entry_Type_Enum.SHORT))
+			val_max = tr(quality.get_enum_value(val_max, Game_Quality.Entry_Type_Enum.SHORT))
+			cur_val = tr(quality.get_enum_value(cur_val, Game_Quality.Entry_Type_Enum.SHORT))
 			if val_min == null or val_max == null:
 				push_error([Game_Command.Obj_Enum.keys()[obj], 
 							Game_Command.Cmd_Enum.keys()[cmd], 

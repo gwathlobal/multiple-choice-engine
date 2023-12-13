@@ -81,11 +81,7 @@ func set_result(new_result:Actual_Result):
 		placeholders["mod_value"] = cmd.value.to_int()
 		
 		if quality.type == Game_Quality.Type_Enum.ENUM:
-			var enum_str:String 
-			if quality.category == Game_Quality.Category_Enum.JOURNAL:
-				enum_str = tr(quality.get_journal_entry_value(World.get_prop(cmd.obj, cmd.prop), Game_Quality.Journal_Entry_Enum.TRANSITION))
-			else:
-				enum_str = tr(quality.values.get(World.get_prop(cmd.obj, cmd.prop)))
+			var enum_str:String = tr(quality.get_enum_value(World.get_prop(cmd.obj, cmd.prop), Game_Quality.Entry_Type_Enum.TRANSITION))
 			placeholders["cur_value"] = enum_str
 			if  enum_str == null:
 				push_error([Game_Command.Obj_Enum.keys()[cmd.obj], 

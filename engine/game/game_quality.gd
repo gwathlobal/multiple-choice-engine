@@ -4,7 +4,7 @@ class_name Game_Quality
 
 enum Type_Enum {INT, ENUM, STRING, PROGRESS}
 enum Category_Enum {SYSTEM, MECHANICS, JOURNAL, ITEM, SKILL}
-enum Journal_Entry_Enum {SHORT, LONG, TRANSITION}
+enum Entry_Type_Enum {SHORT, LONG, TRANSITION}
 
 @export var id:GQ.Nms
 @export var icon:Texture2D
@@ -31,9 +31,9 @@ enum Journal_Entry_Enum {SHORT, LONG, TRANSITION}
 @export_multiline var range_text_cond_succ:String
 @export_multiline var range_text_cond_fail:String
 
-const JOURNAL_SHORT:String = "short"
-const JOURNAL_LONG:String = "long"
-const JOURNAL_TRANSITION:String = "trans"
+const ENUM_SHORT:String = "short"
+const ENUM_LONG:String = "long"
+const ENUM_TRANSITION:String = "trans"
 
 func get_quality_declination_tr() -> Dictionary:
 	var result:Dictionary = {}
@@ -53,22 +53,17 @@ func get_general_quality_declination_tr() -> Dictionary:
 func get_description() -> String:
 	return i18n_name + "_description"
 
-func get_enum_value(i:String):
+func get_enum_value(i:String, entry_type:Entry_Type_Enum):
 	if values == null:
 		return null
-	return values.get(i)
-
-func get_journal_entry_value(i:String, entry_type:Journal_Entry_Enum):
-	if values == null:
-		return null
-	if entry_type == Journal_Entry_Enum.SHORT:
-		return values.get(i).get(JOURNAL_SHORT)
-	elif entry_type == Journal_Entry_Enum.LONG:
-		return values.get(i).get(JOURNAL_LONG)
-	elif entry_type == Journal_Entry_Enum.TRANSITION:
-		return values.get(i).get(JOURNAL_TRANSITION)
+	if entry_type == Entry_Type_Enum.SHORT:
+		return values.get(i).get(ENUM_SHORT)
+	elif entry_type == Entry_Type_Enum.LONG:
+		return values.get(i).get(ENUM_LONG)
+	elif entry_type == Entry_Type_Enum.TRANSITION:
+		return values.get(i).get(ENUM_TRANSITION)
 	else:
-		push_error("Quality ", id, " is not able to process journal entry", entry_type)
+		push_error("Quality ", id, " is not able to process enum entry", entry_type)
 	return null
 
 func calc_progress_values(value:int) -> Array[int]:
