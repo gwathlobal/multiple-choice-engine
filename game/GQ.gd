@@ -3,14 +3,7 @@ extends Node
 class_name GQ
 
 enum Nms {
-	SYS_BACKGROUND_IMG,
-	PLAYER_ACTION_POINTS,
-	PLAYER_QUEST,
-	PLAYER_ITEM,
-	PLAYER_WOUND,
-	PLAYER_RANDOM_VALUE,
-	PLAYER_NAME,
-	PLAYER_SKILL
+	SYS_BACKGROUND_IMG
 }
 
 static func get_str(val: Nms) -> String:
